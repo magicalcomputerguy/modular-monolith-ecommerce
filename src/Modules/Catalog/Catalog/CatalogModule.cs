@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Catalog;
@@ -8,5 +9,10 @@ public static class CatalogModule
     public static IServiceCollection AddCatalogModule(this IServiceCollection services, IConfiguration configuration)
     {
         return services;
+    }
+    
+    public static WebApplication UseCatalogModule(this WebApplication app)
+    {
+        return app;
     }
 }
