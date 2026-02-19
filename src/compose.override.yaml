@@ -1,0 +1,12 @@
+﻿services:
+  shop_database:
+    container_name: shop_database
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=ShopDatabase
+    restart: always
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_shop_database:/var/lib/postgresql/18/main

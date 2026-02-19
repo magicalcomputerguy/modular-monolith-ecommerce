@@ -1,0 +1,6 @@
+﻿services:
+  shop_database:
+    image: postgres
+
+volumes:
+  postgres_shop_database:
