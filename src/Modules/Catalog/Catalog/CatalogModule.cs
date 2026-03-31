@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Shared.Behaviours;
 using Shared.Data;
 using Shared.Data.Interceptors;
 
@@ -18,6 +19,7 @@ public static class CatalogModule
         services.AddMediatR(cfg =>
         {
             cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
+            cfg.AddOpenBehavior(typeof(ValidationBehaviour<,>));
         });
         
         var connectionString = configuration.GetConnectionString("Database");
